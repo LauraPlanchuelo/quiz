@@ -3,8 +3,9 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes');
+var express = require('express');
+var parials = require('express-partials');
+var routes = require('./routes/index');
 
 var app = module.exports = express.createServer();
 
@@ -18,6 +19,7 @@ app.configure(function(){
   app.use(app.router);
   app.use('/', routes);
   app.use(express.static(__dirname + '/public'));
+  app.use(partials());
 });
 
 app.configure('development', function(){

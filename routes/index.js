@@ -11,7 +11,7 @@ router.get('/question', quizController.question);
 router.get('check', quizController.check);
 
 router.get('/', function(req,res){
-	res.render('index', { title : 'Express'});
+	res.render('index');
 });
 
 app.get("/question", function(req, res){
