@@ -1,0 +1,25 @@
+
+/*
+ * GET home page.
+ */
+var express = require ('express');
+var router = express.Router();
+
+// GET /question
+exports.question = functio (req, res, nex) {
+	var answer = req.query.answer || '';
+	res.render('quizzes/question', {question: 'Capital de Italia', answer: answer});
+};
+
+//GET /check
+exports.check = function(req, res, next) {
+	var result = req.query.answer === 'Roma' ? 'Correcta' : Incorrecta;
+	res.render('quizzes/result', { result: result;});
+};
+
+// esto ya venia antes, no se si hay que quitarlo..
+router.get('/', function(req,res){
+	res.render('index', { title : 'Express'});
+});
+
+moduleexports = router;
